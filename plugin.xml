@@ -231,7 +231,7 @@
 
         <framework src="EventKit.framework" />
 
-        <!-- <config-file target="*-Info.plist" parent="NSRemindersUsageDescription">
+        <config-file target="*-Info.plist" parent="NSRemindersUsageDescription">
             <string>This app requires reminders access to function properly.</string>
         </config-file> 
         
