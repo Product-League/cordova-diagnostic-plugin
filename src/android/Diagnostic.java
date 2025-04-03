@@ -137,8 +137,8 @@ public class Diagnostic extends CordovaPlugin{
         Diagnostic.addBiDirMapEntry(_permissionsMap, "NEARBY_WIFI_DEVICES", "android.permission.NEARBY_WIFI_DEVICES");
         Diagnostic.addBiDirMapEntry(_permissionsMap, "POST_NOTIFICATIONS", "android.permission.POST_NOTIFICATIONS");
         Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_AUDIO");
-        Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_IMAGES");
-        Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_VIDEO");
+        //Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_IMAGES");
+        //Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_VIDEO");
 
         permissionsMap = Collections.unmodifiableMap(_permissionsMap);
     }
