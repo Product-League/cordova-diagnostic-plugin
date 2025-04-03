@@ -13,7 +13,7 @@ fs.readFile( manifestFile, "utf8", function( err, data )
     let result = data;
     for (var i=0; i<permissionsToRemove.length; i++){
         const regex = new RegExp(`<uses-permission[^>]*android:name=["']${permissionsToRemove[i]}["'][^>]*/?>`, 'gi');
-        if (regex.test(manifestContent)) {
+        if (regex.test(result)) {
             result = result.replace(regex, '');
         }
     }
