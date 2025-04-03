@@ -263,7 +263,8 @@
     </platform>
 
     <platform name="android">
-    <hook type="after_prepare" src="scripts/remove_permissions.js"/>
+    <preference name="android-manifest/uses-permission/[@android:name='android.permission.READ_MEDIA_VIDEO']" delete="true" />
+    <preference name="android-manifest/uses-permission/[@android:name='android.permission.READ_MEDIA_IMAGES']" delete="true" />
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic" >
                 <param name="android-package" value="cordova.plugins.Diagnostic"/>
