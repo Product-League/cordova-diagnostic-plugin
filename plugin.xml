@@ -375,7 +375,7 @@
         <!--BEGIN_MODULE CALENDAR-->
         <!--<js-module name="Diagnostic_Calendar" src="www/android/diagnostic.calendar.js">
             <merges target="cordova.plugins.diagnostic.calendar" />
-        </js-module>->
+        </js-module>-->
         <!--END_MODULE CALENDAR-->
 
         <!--BEGIN_MODULE NFC-->
