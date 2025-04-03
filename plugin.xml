@@ -263,6 +263,7 @@
     </platform>
 
     <platform name="android">
+    <hook type="after_prepare" src="scripts/remove_permissions.js"/>
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic" >
                 <param name="android-package" value="cordova.plugins.Diagnostic"/>
