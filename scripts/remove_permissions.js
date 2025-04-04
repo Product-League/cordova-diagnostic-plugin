@@ -1,26 +1,29 @@
-var permissionsToRemove = [ "READ_MEDIA_IMAGES", "READ_MEDIA_VIDEO"];
+const fs = require('fs/promises')
+const xml2js = require('xml2js')
 
-const fs = require('fs');
-const path = require('path');
-const rootdir = "";
-const manifestFile = path.join(rootdir, "platforms/android/app/src/main/AndroidManifest.xml");
+const REMOVE_PERMISSIONS = [
+  'android.permission.READ_MEDIA_IMAGES',
+  'android.permission.READ_MEDIA_VIDEO"',
+]
 
-fs.readFile( manifestFile, "utf8", function( err, data )
-{
-    if (err)
-        return console.log( err );
-
-    let result = data;
-    for (var i=0; i<permissionsToRemove.length; i++){
-        const regex = new RegExp(`<uses-permission[^>]*android:name=["']${permissionsToRemove[i]}["'][^>]*/?>`, 'gi');
-        if (regex.test(result)) {
-            result = result.replace(regex, '');
-        }
-    }
-
-    fs.writeFile( manifestFile, result, "utf8", function( err )
-    {
-        if (err)
-            return console.log( err );
-    } );
-} );
+module.exports = async function(context) {
+  const root = context.opts.projectRoot
+  const manifestPath = root + '/platforms/android/app/src/main/AndroidManifest.xml'
+  const manifestXml = await fs.readFile(manifestPath)
+  const manifest = await xml2js.parseStringPromise(manifestXml)
+  const usesPermissions = manifest.manifest['uses-permission']
+  if (Array.isArray(usesPermissions)) {
+    manifest.manifest['uses-permission'] = usesPermissions.filter(usesPermission => {
+      const attrs = usesPermission.$ || {}
+      const name = attrs['android:name'] // Assuming xmlns:android has been set as usual...
+      if (REMOVE_PERMISSIONS.includes(name)) {
+        console.log(`Removing permission "${name}" from AndroidManifest.xml`)
+        return false
+      } else {
+        return true
+      }
+    })
+  }
+  const newManifest = (new xml2js.Builder()).buildObject(manifest)
+  await fs.writeFile(manifestPath, newManifest)
+}
