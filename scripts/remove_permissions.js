@@ -3,7 +3,7 @@ const xml2js = require('xml2js')
 
 const REMOVE_PERMISSIONS = [
   'android.permission.READ_MEDIA_IMAGES',
-  'android.permission.READ_MEDIA_VIDEO"',
+  'android.permission.READ_MEDIA_VIDEO',
 ]
 
 module.exports = async function(context) {
