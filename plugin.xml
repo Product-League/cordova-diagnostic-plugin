@@ -263,7 +263,6 @@
     </platform>
 
     <platform name="android">
-    <hook type="after_prepare" src="scripts/remove_permissions.js"/>
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic" >
                 <param name="android-package" value="cordova.plugins.Diagnostic"/>
@@ -298,7 +297,7 @@
         <!--END_MODULE LOCATION-->
 
         <!--BEGIN_MODULE BLUETOOTH-->
-        <!--<config-file target="config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Bluetooth" >
                 <param name="android-package" value="cordova.plugins.Diagnostic_Bluetooth"/>
                 <param name="onload" value="true" />
@@ -313,11 +312,11 @@
             <merges target="cordova.plugins.diagnostic.bluetooth" />
         </js-module>
 
-        <source-file src="src/android/Diagnostic_Bluetooth.java" target-dir="src/cordova/plugins" />-->
+        <source-file src="src/android/Diagnostic_Bluetooth.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE BLUETOOTH-->
 
         <!--BEGIN_MODULE WIFI-->
-        <!--<config-file target="config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Wifi" >
                 <param name="android-package" value="cordova.plugins.Diagnostic_Wifi"/>
                 <param name="onload" value="true" />
@@ -328,11 +327,11 @@
             <merges target="cordova.plugins.diagnostic.wifi" />
         </js-module>
 
-        <source-file src="src/android/Diagnostic_Wifi.java" target-dir="src/cordova/plugins" />-->
+        <source-file src="src/android/Diagnostic_Wifi.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE WIFI-->
 
         <!--BEGIN_MODULE CAMERA-->
-        <!--<config-file target="config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Camera" >
                 <param name="android-package" value="cordova.plugins.Diagnostic_Camera"/>
                 <param name="onload" value="true" />
@@ -343,7 +342,7 @@
             <merges target="cordova.plugins.diagnostic.camera" />
         </js-module>
 
-        <source-file src="src/android/Diagnostic_Camera.java" target-dir="src/cordova/plugins" /> -->
+        <source-file src="src/android/Diagnostic_Camera.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE CAMERA-->
 
         <!--BEGIN_MODULE NOTIFICATIONS-->
@@ -362,25 +361,25 @@
         <!--END_MODULE NOTIFICATIONS-->
 
         <!--BEGIN_MODULE MICROPHONE-->
-        <!--<js-module name="Diagnostic_Microphone" src="www/android/diagnostic.microphone.js">
+        <js-module name="Diagnostic_Microphone" src="www/android/diagnostic.microphone.js">
             <merges target="cordova.plugins.diagnostic.microphone" />
-        </js-module>-->
+        </js-module>
         <!--END_MODULE MICROPHONE-->
 
         <!--BEGIN_MODULE CONTACTS-->
-        <!--<js-module name="Diagnostic_Contacts" src="www/android/diagnostic.contacts.js">
+        <js-module name="Diagnostic_Contacts" src="www/android/diagnostic.contacts.js">
             <merges target="cordova.plugins.diagnostic.contacts" />
-        </js-module>-->
+        </js-module>
         <!--END_MODULE CONTACTS-->
 
         <!--BEGIN_MODULE CALENDAR-->
-        <!--<js-module name="Diagnostic_Calendar" src="www/android/diagnostic.calendar.js">
+        <js-module name="Diagnostic_Calendar" src="www/android/diagnostic.calendar.js">
             <merges target="cordova.plugins.diagnostic.calendar" />
-        </js-module>-->
+        </js-module>
         <!--END_MODULE CALENDAR-->
 
         <!--BEGIN_MODULE NFC-->
-        <!--<config-file target="config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_NFC" >
                 <param name="android-package" value="cordova.plugins.Diagnostic_NFC"/>
                 <param name="onload" value="true" />
@@ -391,11 +390,11 @@
             <merges target="cordova.plugins.diagnostic.nfc" />
         </js-module>
 
-        <source-file src="src/android/Diagnostic_NFC.java" target-dir="src/cordova/plugins" />-->
+        <source-file src="src/android/Diagnostic_NFC.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE NFC-->
 
         <!--BEGIN_MODULE EXTERNAL_STORAGE-->
-        <!--<config-file target="config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_External_Storage" >
                 <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage"/>
                 <param name="onload" value="true" />
@@ -406,7 +405,7 @@
             <merges target="cordova.plugins.diagnostic.external_storage" />
         </js-module>
 
-        <source-file src="src/android/Diagnostic_External_Storage.java" target-dir="src/cordova/plugins" /> -->
+        <source-file src="src/android/Diagnostic_External_Storage.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE EXTERNAL_STORAGE-->
     </platform>
 </plugin>
